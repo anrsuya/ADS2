@@ -44,9 +44,7 @@ public class Main {
             System.out.println((i + 1) + ". " + physicalAccounts[i]);
         }
         System.out.println();
-        for (BankAccount acc : physicalAccounts) {
-            accounts.add(acc);
-        }
+        Collections.addAll(accounts, physicalAccounts);
     }
     //  PART 3
     static void mainMenu() {
@@ -140,11 +138,6 @@ public class Main {
                 default  -> System.out.println("Invalid option.");
             }
         }
-    }
-    //  PART 1 — Task 1
-    static void addAccount(BankAccount acc) {
-        accounts.add(acc);
-        System.out.println("Account added successfully.");
     }
     //  PART 1 — Task 1
     static void displayAllAccounts() {
