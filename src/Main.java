@@ -48,7 +48,7 @@ public class Main {
             accounts.add(acc);
         }
     }
-    //  PART 3 — MINI BANKING MENU
+    //  PART 3
     static void mainMenu() {
         while (true) {
             System.out.println("\n========== MAIN MENU ==========");
@@ -170,7 +170,7 @@ public class Main {
         }
         System.out.println("Account not found.");
     }
-    //  PART 1 — Task 1 (helper)
+    //  PART 1 — Task 1
     static BankAccount findAccount(String username) {
         for (BankAccount acc : accounts) {
             if (acc.username.equalsIgnoreCase(username)) return acc;
@@ -191,7 +191,7 @@ public class Main {
             acc.balance += amount;
             System.out.println("New balance: " + acc.balance);
 
-            // Task 3: записать транзакцию в Stack
+            // Task 3
             String record = "Deposit " + amount + " to " + name;
             transactionHistory.push(record);
             System.out.println("Transaction recorded: " + record);
