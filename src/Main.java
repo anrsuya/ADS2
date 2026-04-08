@@ -42,7 +42,7 @@ class ArrayStack {
     }
 
     public void push(String item) {
-        if (top == data.length - 1) {               // grow dynamically if full
+        if (top == data.length - 1) {
             data = Arrays.copyOf(data, data.length * 2);
         }
         data[++top] = item;
@@ -51,7 +51,7 @@ class ArrayStack {
     public String pop() {
         if (isEmpty()) throw new EmptyStackException();
         String item = data[top];
-        data[top--] = null;                          // help GC
+        data[top--] = null;
         return item;
     }
 
@@ -74,7 +74,7 @@ public class Main {
     // PART 1 – Task 1
     static LinkedList<BankAccount> accounts = new LinkedList<>();
 
-    // PART 1 – Task 3  (now uses our custom ArrayStack)
+    // PART 1 – Task 3
     static ArrayStack transactionHistory = new ArrayStack();
 
     // PART 1 – Task 4
@@ -305,7 +305,7 @@ public class Main {
 
         String last = transactionHistory.peek();
         String[] parts = last.split(" ");
-        String type = parts[0];   // "Deposit", "Withdraw", or "Bill"
+        String type = parts[0];
 
         if (type.equals("Bill")) {
             transactionHistory.pop();
